@@ -42,7 +42,8 @@ export default function Groups() {
         </select>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-line bg-card">
+      <div className="overflow-x-auto">
+       <div className="min-w-[460px] overflow-hidden rounded-xl border border-line bg-card">
         {/* header */}
         <div className="grid grid-cols-[28px_1fr_28px_28px_28px_28px_44px_36px_auto] items-center gap-1 border-b border-line bg-black/20 px-3 py-2 text-[10px] font-semibold uppercase tracking-wide text-muted">
           <span>#</span>
@@ -94,6 +95,7 @@ export default function Groups() {
             </div>
           );
         })}
+       </div>
       </div>
 
       {/* legend */}

@@ -329,8 +329,8 @@ export default function Bracket() {
   return (
     <div className="relative w-full">
       {/* mode bar */}
-      <div className="flex items-center gap-2 border-b border-line px-4 py-1.5 sm:px-8">
-        <div className="flex rounded-full bg-card2 p-0.5 text-xs font-semibold">
+      <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap border-b border-line px-4 py-1.5 sm:px-8">
+        <div className="flex shrink-0 rounded-full bg-card2 p-0.5 text-xs font-semibold">
           <button
             type="button"
             onClick={() => setMode("preset")}
@@ -364,7 +364,7 @@ export default function Bracket() {
           <button
             type="button"
             onClick={() => setPicks({})}
-            className="ml-auto rounded-md border border-line bg-card2 px-2.5 py-1 text-[11px] font-medium text-muted hover:text-foreground"
+            className="ml-auto shrink-0 rounded-md border border-line bg-card2 px-2.5 py-1 text-[11px] font-medium text-muted hover:text-foreground"
           >
             Reset picks
           </button>
