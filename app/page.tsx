@@ -7,7 +7,7 @@ function TopBar() {
   return (
     <header className="flex h-12 w-full items-center gap-4 border-b border-line bg-background px-4 sm:px-8">
       <span className="text-lg font-extrabold tracking-tight text-foreground">
-        FOT<span className="text-accent">MOB</span>
+        GOAL<span className="text-accent">CHARTS</span>
       </span>
       <div className="hidden flex-1 sm:block">
         <div className="flex max-w-xs items-center gap-2 rounded-full border border-line bg-card2 px-3 py-1">
