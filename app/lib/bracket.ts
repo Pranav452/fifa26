@@ -121,6 +121,20 @@ export const MATCH_BY_ID: Record<string, Match> = Object.fromEntries(
   MATCHES.map((m) => [m.id, m]),
 );
 
+// FotMob seeding labels for later-round slots — which group winners/runners/thirds
+// are scheduled to meet (shown as the placeholder until a real winner advances).
+export const SEED: Record<string, [string, string]> = {
+  LA: ["G3A", "1IC"], LB: ["2AB", "1FC"], LC: ["2KL", "1HJ"], LD: ["US3", "1GA"],
+  LQ1: ["EF1", "EF2"], LQ2: ["EF5", "EF6"], LS: ["WQ1", "WQ2"],
+  RA: ["1CF", "2EI"], RB: ["M3C", "1LE"], RC: ["AR2", "2DG"], RD: ["1BE", "1KD"],
+  RQ1: ["EF3", "EF4"], RQ2: ["EF7", "EF8"], RS: ["WQ3", "WQ4"],
+  F: ["WS1", "WS2"], B: ["LS1", "LS2"],
+};
+export const seedLabel = (matchId: string, slot: "a" | "b"): string => {
+  const s = SEED[matchId];
+  return s ? s[slot === "a" ? 0 : 1] : "";
+};
+
 export const crestUrl = (teamCode: string): string => {
   const id = TEAMS[teamCode]?.id;
   return id ? `https://images.fotmob.com/image_resources/logo/teamlogo/${id}.png` : "";

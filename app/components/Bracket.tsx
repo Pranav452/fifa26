@@ -8,6 +8,7 @@ import {
   GROUPS,
   crestUrl,
   teamGroup,
+  seedLabel,
   resolveSlot,
   winnerCode,
   champion,
@@ -104,6 +105,7 @@ function MatchBox({
     const isWinner = winner != null && code === winner;
     const isLoser = winner != null && code !== winner && code != null;
     const grp = showGroup ? teamGroup(code) : "";
+    const seed = empty ? seedLabel(id, slot) : "";
     return (
       <div className="group/row relative flex items-center">
         <button
@@ -122,9 +124,10 @@ function MatchBox({
               "flex-1 truncate text-xs tracking-wide",
               isWinner ? "font-bold" : "font-semibold",
               isLoser ? "line-through decoration-muted/40" : "",
+              empty ? "font-medium text-muted" : "",
             ].join(" ")}
           >
-            {code ?? "—"}
+            {code ?? (seed || "—")}
           </span>
           {grp && <span className="rounded bg-line/50 px-1 text-[9px] font-bold text-muted">{grp}</span>}
           {isWinner && (
