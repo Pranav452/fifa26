@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0e0e10;
+  --foreground: #ededed;
+  --card: #1d1d1f;
+  --card-2: #252528;
+  --line: #3a3a3e;
+  --muted: #9a9aa2;
+  --accent: #2bd673;
+  --gold: #f5c451;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card2: var(--card-2);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-gold: var(--gold);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* FotMob-style league header gradient */
+.wc-hero {
+  background:
+    radial-gradient(120% 130% at 8% -10%, rgba(151, 224, 95, 0.35), transparent 45%),
+    radial-gradient(120% 130% at 92% -20%, rgba(0, 68, 255, 0.45), transparent 50%),
+    radial-gradient(90% 120% at 50% 130%, rgba(250, 61, 61, 0.25), transparent 55%),
+    #1a1a1a;
+}
+
+/* thin scrollbar for the bracket scroller */
+.bracket-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.bracket-scroll::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 8px;
 }
